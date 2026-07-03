@@ -1,0 +1,8 @@
+[submodule "atrium-text_extraction"]
+	path = atrium-text_extraction
+	url = git@github.com:greenwoodma/atrium-text_extraction.git
+	branch = galaxy-wrapper
+[submodule "rematch2"]
+	path = rematch2
+	url = git@github.com:greenwoodma/rematch2.git
+	branch = feat/galaxy_wrapper
