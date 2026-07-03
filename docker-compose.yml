@@ -1,0 +1,14 @@
+services:
+  galaxy:
+    image: quay.io/bgruening/galaxy
+    ports:
+      - 8080:80
+    environment:
+      - GALAXY_CONFIG_TOOL_CONFIG_FILE=/etc/galaxy/tool_conf.xml,/local_tools/atrium_tools.xml
+    volumes:
+      - type: bind
+        source: ./config/
+        target: /export/
+      - type: bind
+        source: ./tools/
+        target: /local_tools/
