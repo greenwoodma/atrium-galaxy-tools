@@ -1,0 +1,122 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "Performs vocabulary-driven information extraction as implemented in ATRIUM Task 4.2.1",
+    "comments": [],
+    "format-version": "0.1",
+    "name": "ATRIUM T4.2.1: Vocabulary-Driven Information Extraction",
+    "report": {
+        "markdown": "\n# Workflow Execution Report\n\n## Workflow Inputs\n```galaxy\ninvocation_inputs()\n```\n\n## Workflow Outputs\n```galaxy\ninvocation_outputs()\n```\n\n## Workflow\n```galaxy\nworkflow_display()\n```\n"
+    },
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "PDF to Process"
+                }
+            ],
+            "label": "PDF to Process",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 27.000015258789062
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"pdf\"], \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "3cd59918-b5c9-4e45-ae00-66adad034c58",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "atrium_pdf_text_extraction",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "pdf": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "Extract Text from PDF",
+            "name": "atrium_pdf_text_extraction",
+            "outputs": [
+                {
+                    "name": "json",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "left": 334,
+                "top": 0
+            },
+            "post_job_actions": {
+                "HideDatasetActionjson": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "json"
+                }
+            },
+            "tool_id": "atrium_pdf_text_extraction",
+            "tool_state": "{\"ocr\": \"notset\", \"pdf\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "c67d6fe9-9312-451c-80eb-3d8936caac6d",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "atrium_ie",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "input": {
+                    "id": 1,
+                    "output_name": "json"
+                }
+            },
+            "inputs": [],
+            "label": "Vocabulary-Driven Information Extraction",
+            "name": "atrium_t4_1_2_ie",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "left": 499.33331298828136,
+                "top": 212.00003051757812
+            },
+            "post_job_actions": {},
+            "tool_id": "atrium_ie",
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "7a919698-2ce2-4fff-8672-cbc927707bda",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "output",
+                    "output_name": "output",
+                    "uuid": "36bd12e7-f2d2-476a-9a4e-5ba4c4b08927"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "acfa5982-53af-4550-b384-f7abf5327416",
+    "version": 3
+}
