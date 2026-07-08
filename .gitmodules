@@ -6,3 +6,6 @@
 	path = tools/rematch2
 	url = git@github.com:greenwoodma/rematch2.git
 	branch = feat/galaxy_wrapper
+[submodule "tools/gate-galaxy-wrapper"]
+	path = tools/gate-galaxy-wrapper
+	url = git@github.com:greenwoodma/gate-galaxy-wrapper.git
