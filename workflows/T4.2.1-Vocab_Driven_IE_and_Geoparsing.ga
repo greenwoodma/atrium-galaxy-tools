@@ -3,7 +3,7 @@
     "annotation": "",
     "comments": [],
     "format-version": "0.1",
-    "name": "ATRIUM T.4.1.2 IE",
+    "name": "ATRIUM T.4.1.2 IE and Geoparsing",
     "report": {
         "markdown": "\n# Workflow Execution Report\n\n## Workflow Inputs\n```galaxy\ninvocation_inputs()\n```\n\n## Workflow Outputs\n```galaxy\ninvocation_outputs()\n```\n\n## Workflow\n```galaxy\nworkflow_display()\n```\n"
     },
@@ -31,7 +31,7 @@
             "tool_state": "{\"optional\": false, \"tag\": null}",
             "tool_version": null,
             "type": "data_input",
-            "uuid": "725cf90f-67c0-4aac-a952-c25ca6e01ba2",
+            "uuid": "66730215-11f2-4ba5-8b65-8274e49d4790",
             "when": null,
             "workflow_outputs": []
         },
@@ -71,7 +71,7 @@
             "tool_uuid": null,
             "tool_version": "1.0.0",
             "type": "tool",
-            "uuid": "f2f6c026-8022-44ae-b679-1a81e6759ef5",
+            "uuid": "fbd8a83d-b09f-4d0e-964c-5e1813bd6166",
             "when": null,
             "workflow_outputs": []
         },
@@ -97,26 +97,66 @@
             ],
             "position": {
                 "left": 413.6666259765625,
-                "top": 162.6666717529297
+                "top": 162
             },
-            "post_job_actions": {},
+            "post_job_actions": {
+                "HideDatasetActionoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output"
+                }
+            },
             "tool_id": "atrium_t_4_1_2_ie",
             "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
             "tool_uuid": null,
             "tool_version": "1.0.0",
             "type": "tool",
-            "uuid": "511ac3eb-ed7a-4e8b-8b36-a344673bb0d7",
+            "uuid": "0c57376f-5e1c-4f24-85d4-52b6a4490e40",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "gate-cloud-client",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "input": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "Geoparsing (Geonames)",
+            "name": "gate-cloud-client",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "left": 513.6666870117188,
+                "top": 328
+            },
+            "post_job_actions": {},
+            "tool_id": "gate-cloud-client",
+            "tool_state": "{\"credentials\": {\"api_key\": \"gcsm8fta7ahw\", \"api_password\": \"btvdecnizcly9pcpeh86\"}, \"endpoint\": \"https://cloud-api.gate.ac.uk/process/geonames-gaz-ner\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "57e93153-e879-41c0-aed5-d34fe97bc74f",
             "when": null,
             "workflow_outputs": [
                 {
                     "label": "output",
                     "output_name": "output",
-                    "uuid": "45e77d81-c446-4603-98b0-f7e13ee35f78"
+                    "uuid": "5798cf40-aca6-4c20-b88d-0a56deb5bee1"
                 }
             ]
         }
     },
     "tags": [],
-    "uuid": "0038ed5a-8a0c-4810-bb85-eb52a8aa5867",
-    "version": 1
+    "uuid": "defd5bb0-97bd-486e-841f-d3eb68ffaf53",
+    "version": 3
 }
